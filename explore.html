@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore &mdash; Yellowstone National Park</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Crimson+Text:ital@0;1&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand">YNP</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="explore.html" class="active">Explore</a></li>
+      <li><a href="visit.html">Plan Your Visit</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-overlay"></div>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Above_the_Clouds_%288645054112%29.jpg/1280px-Above_the_Clouds_%288645054112%29.jpg"
+      alt="Yellowstone landscape"
+      class="page-header-img"
+    />
+    <div class="page-header-text">
+      <p class="hero-eyebrow">Discover the Park</p>
+      <h1>Explore<br /><em>Yellowstone</em></h1>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="trails-section">
+      <div class="section-intro">
+        <h2 class="section-title">Trails &amp; Hikes</h2>
+        <p class="section-desc">
+          Yellowstone offers over 900 miles of maintained trails ranging from accessible boardwalks
+          to strenuous backcountry routes. The table below highlights a selection of popular hikes.
+          Always check current trail conditions at a visitor center before heading out.
+        </p>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="trails-table">
+          <thead>
+            <tr>
+              <th>Trail Name</th>
+              <th>Difficulty</th>
+              <th>Distance</th>
+              <th>Elevation Gain</th>
+              <th>Highlights</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="trail-name">Old Faithful Observation Point</td>
+              <td><span class="badge badge-easy">Easy</span></td>
+              <td>0.9 mi</td>
+              <td>177 ft</td>
+              <td>Overhead view of Old Faithful eruptions</td>
+            </tr>
+            <tr>
+              <td class="trail-name">Mystic Falls Trail</td>
+              <td><span class="badge badge-easy">Easy</span></td>
+              <td>2.6 mi</td>
+              <td>300 ft</td>
+              <td>Waterfall, bison meadows, geyser views</td>
+            </tr>
+            <tr>
+              <td class="trail-name">Grand Prismatic Overlook</td>
+              <td><span class="badge badge-easy">Easy</span></td>
+              <td>1.6 mi</td>
+              <td>165 ft</td>
+              <td>Aerial view of the famous rainbow spring</td>
+            </tr>
+            <tr>
+              <td class="trail-name">Mount Washburn</td>
+              <td><span class="badge badge-moderate">Moderate</span></td>
+              <td>6.4 mi</td>
+              <td>1,400 ft</td>
+              <td>360° panoramic summit views, bighorn sheep</td>
+            </tr>
+            <tr>
+              <td class="trail-name">Fairy Falls Trail</td>
+              <td><span class="badge badge-moderate">Moderate</span></td>
+              <td>5.0 mi</td>
+              <td>200 ft</td>
+              <td>Tallest accessible waterfall in the park (197 ft)</td>
+            </tr>
+            <tr>
+              <td class="trail-name">Avalanche Peak</td>
+              <td><span class="badge badge-strenuous">Strenuous</span></td>
+              <td>4.0 mi</td>
+              <td>2,100 ft</td>
+              <td>Stunning alpine views of the Absaroka Range</td>
+            </tr>
+            <tr>
+              <td class="trail-name">Shoshone Lake via DeLacy Creek</td>
+              <td><span class="badge badge-moderate">Moderate</span></td>
+              <td>6.0 mi</td>
+              <td>300 ft</td>
+              <td>Largest backcountry lake in lower 48 states</td>
+            </tr>
+            <tr>
+              <td class="trail-name">Black Canyon of the Yellowstone</td>
+              <td><span class="badge badge-strenuous">Strenuous</span></td>
+              <td>19.0 mi</td>
+              <td>1,800 ft</td>
+              <td>Remote canyon, river fishing, wildlife corridor</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="wildlife-section">
+      <div class="wildlife-img-wrap">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Bison_skull_pile_edit.jpg/640px-Bison_skull_pile_edit.jpg"
+          alt="American bison in Yellowstone"
+          class="wildlife-img"
+        />
+      </div>
+      <div class="wildlife-text">
+        <h2>Wildlife Viewing</h2>
+        <p>
+          Yellowstone is one of the few places in the lower 48 states where large predators and their
+          prey still interact in a nearly intact ecosystem. Early morning and dusk offer the best
+          viewing opportunities.
+        </p>
+        <ul class="wildlife-list">
+          <li><span class="wildlife-icon">🦬</span> American Bison — over 4,000 in the park</li>
+          <li><span class="wildlife-icon">🐺</span> Gray Wolf — reintroduced in 1995</li>
+          <li><span class="wildlife-icon">🐻</span> Grizzly &amp; Black Bear</li>
+          <li><span class="wildlife-icon">🦌</span> Elk — largest population in North America</li>
+          <li><span class="wildlife-icon">🦅</span> Bald Eagle &amp; Osprey</li>
+          <li><span class="wildlife-icon">🐟</span> Cutthroat Trout</li>
+        </ul>
+        <a href="visit.html" class="btn-primary">Plan Your Trip</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Yellowstone National Park &mdash; <a href="index.html">Home</a> &mdash; <a href="visit.html">Plan Your Visit</a></p>
+    <p class="footer-note">A fictional visitor site created for educational purposes.</p>
+  </footer>
+
+</body>
+</html>

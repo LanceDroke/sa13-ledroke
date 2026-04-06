@@ -1,0 +1,663 @@
+/* ============================================================
+   Yellowstone National Park — Visitor Website
+   styles.css  |  External stylesheet for all 3 pages
+   ============================================================ */
+
+/* ── CSS Variables ── */
+:root {
+  --clr-stone:    #1a1714;
+  --clr-earth:    #2c2418;
+  --clr-bark:     #3d2e18;
+  --clr-amber:    #c47b1e;
+  --clr-gold:     #e8a830;
+  --clr-cream:    #f5ede0;
+  --clr-mist:     #f9f4ed;
+  --clr-sage:     #6b7c5a;
+  --clr-spring:   #e04b1a;
+
+  --ff-display: 'Playfair Display', Georgia, serif;
+  --ff-body:    'Crimson Text', Georgia, serif;
+  --ff-ui:      'Josefin Sans', sans-serif;
+
+  --radius: 4px;
+  --shadow: 0 4px 24px rgba(26,23,20,.18);
+  --shadow-lg: 0 12px 48px rgba(26,23,20,.28);
+
+  --nav-h: 64px;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--ff-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--clr-stone);
+  background: var(--clr-mist);
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: var(--clr-amber); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--clr-spring); }
+
+h1, h2, h3 { font-family: var(--ff-display); line-height: 1.2; }
+
+ul { list-style: none; }
+
+/* ── Navbar ── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  background: rgba(26,23,20,.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(232,168,48,.15);
+}
+
+.nav-brand {
+  font-family: var(--ff-ui);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .35em;
+  color: var(--clr-gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-family: var(--ff-ui);
+  font-size: .75rem;
+  font-weight: 400;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(245,237,224,.7);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--clr-gold);
+  border-bottom-color: var(--clr-gold);
+}
+
+/* ── Hero (index.html) ── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 620px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 7rem;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  animation: subtle-zoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes subtle-zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,23,20,.1) 0%,
+    rgba(26,23,20,.0) 30%,
+    rgba(26,23,20,.55) 65%,
+    rgba(26,23,20,.88) 100%
+  );
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  padding: 0 3rem;
+  max-width: 720px;
+}
+
+.hero-eyebrow {
+  font-family: var(--ff-ui);
+  font-size: .72rem;
+  font-weight: 300;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: .8rem;
+  opacity: 0;
+  animation: fade-up .8s .2s forwards;
+}
+
+.hero-text h1 {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  color: var(--clr-cream);
+  opacity: 0;
+  animation: fade-up .8s .4s forwards;
+}
+
+.hero-text h1 em {
+  font-style: italic;
+  color: var(--clr-gold);
+}
+
+.hero-sub {
+  font-family: var(--ff-ui);
+  font-size: .78rem;
+  letter-spacing: .25em;
+  color: rgba(245,237,224,.6);
+  margin: .8rem 0 2rem;
+  opacity: 0;
+  animation: fade-up .8s .6s forwards;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Page Header (explore & visit) ── */
+.page-header {
+  position: relative;
+  height: 52vh;
+  min-height: 380px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 4rem;
+  overflow: hidden;
+}
+
+.page-header-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+.page-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,23,20,.15) 0%,
+    rgba(26,23,20,.75) 100%
+  );
+  z-index: 1;
+}
+
+.page-header-text {
+  position: relative;
+  z-index: 2;
+  padding: 0 3rem;
+}
+
+.page-header-text h1 {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  color: var(--clr-cream);
+}
+
+.page-header-text h1 em {
+  font-style: italic;
+  color: var(--clr-gold);
+}
+
+/* ── Button ── */
+.btn-primary {
+  display: inline-block;
+  font-family: var(--ff-ui);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--clr-stone);
+  background: var(--clr-gold);
+  padding: .85rem 2.2rem;
+  border-radius: var(--radius);
+  transition: background .2s, transform .15s, box-shadow .2s;
+  box-shadow: 0 2px 12px rgba(232,168,48,.35);
+}
+
+.btn-primary:hover {
+  background: var(--clr-spring);
+  color: var(--clr-cream);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(224,75,26,.4);
+}
+
+/* ── About Section ── */
+.about {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 0;
+  padding: 6rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-label {
+  font-family: var(--ff-ui);
+  font-size: .7rem;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: var(--clr-amber);
+  padding-top: .6rem;
+  border-top: 1px solid var(--clr-amber);
+  height: fit-content;
+}
+
+.about-body h2 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: var(--clr-earth);
+  margin-bottom: 1.4rem;
+}
+
+.about-body p {
+  color: #3d3428;
+  max-width: 680px;
+  margin-bottom: 1rem;
+}
+
+.about-stats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(60,46,24,.12);
+  flex-wrap: wrap;
+}
+
+.stat { display: flex; flex-direction: column; }
+
+.stat-num {
+  font-family: var(--ff-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--clr-amber);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--ff-ui);
+  font-size: .68rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: #7a6a55;
+  margin-top: .3rem;
+}
+
+/* ── Featured List ── */
+.featured {
+  background: var(--clr-stone);
+  padding: 6rem 3rem;
+}
+
+.section-title {
+  font-family: var(--ff-ui);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 3rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featured-list {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 2rem;
+  padding: 2.4rem 0;
+  border-top: 1px solid rgba(245,237,224,.08);
+  transition: background .2s;
+}
+
+.featured-item:last-child {
+  border-bottom: 1px solid rgba(245,237,224,.08);
+}
+
+.featured-item:hover { background: rgba(245,237,224,.03); }
+
+.featured-num {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: rgba(232,168,48,.35);
+  padding-top: .2rem;
+}
+
+.featured-content h3 {
+  font-size: 1.35rem;
+  color: var(--clr-cream);
+  margin-bottom: .5rem;
+}
+
+.featured-content p { color: rgba(245,237,224,.6); font-size: 1rem; }
+
+/* ── Trails Section ── */
+.trails-section {
+  padding: 5rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-intro { margin-bottom: 2.5rem; }
+
+.section-desc {
+  color: #5a4a38;
+  max-width: 700px;
+  margin-top: .8rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.trails-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-family: var(--ff-ui);
+  font-size: .85rem;
+}
+
+.trails-table thead {
+  background: var(--clr-bark);
+  color: var(--clr-cream);
+}
+
+.trails-table th {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .7rem;
+  white-space: nowrap;
+}
+
+.trails-table td {
+  padding: .9rem 1.2rem;
+  border-bottom: 1px solid #f0e8dc;
+  vertical-align: middle;
+}
+
+.trails-table tbody tr:hover { background: #fdf7f0; }
+.trails-table tbody tr:last-child td { border-bottom: none; }
+
+.trail-name { font-weight: 600; color: var(--clr-earth); font-family: var(--ff-body); font-size: 1rem; }
+
+/* Difficulty badges */
+.badge {
+  display: inline-block;
+  padding: .2rem .7rem;
+  border-radius: 99px;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.badge-easy     { background: #d4edda; color: #1a5c2a; }
+.badge-moderate { background: #fff3cd; color: #7a5200; }
+.badge-strenuous{ background: #f8d7da; color: #7a1c24; }
+
+/* ── Wildlife Section ── */
+.wildlife-section {
+  background: var(--clr-earth);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+}
+
+.wildlife-img-wrap { overflow: hidden; }
+
+.wildlife-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(.2) brightness(.9);
+  transition: transform .6s ease;
+}
+
+.wildlife-img-wrap:hover .wildlife-img { transform: scale(1.04); }
+
+.wildlife-text {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.wildlife-text h2 {
+  font-size: 2.2rem;
+  color: var(--clr-cream);
+}
+
+.wildlife-text > p { color: rgba(245,237,224,.7); }
+
+.wildlife-list {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.wildlife-list li {
+  color: rgba(245,237,224,.85);
+  font-family: var(--ff-ui);
+  font-size: .85rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.wildlife-icon { font-size: 1.1rem; }
+
+/* ── Visit Grid ── */
+.visit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: #e8ddd0;
+}
+
+.visit-card {
+  background: var(--clr-mist);
+  padding: 3.5rem;
+}
+
+.visit-card--tickets {
+  background: var(--clr-cream);
+}
+
+.visit-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+.visit-card h2 {
+  font-size: 1.6rem;
+  color: var(--clr-earth);
+  margin-bottom: 1.2rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(60,46,24,.12);
+}
+
+.contact-block p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #4a3c2e;
+  line-height: 1.6;
+}
+
+/* Hours table */
+.hours-note {
+  font-size: .9rem;
+  color: #7a6a55;
+  margin-bottom: 1.2rem;
+  font-style: italic;
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ff-ui);
+  font-size: .82rem;
+}
+
+.hours-table th {
+  background: var(--clr-bark);
+  color: var(--clr-cream);
+  padding: .6rem .9rem;
+  text-align: left;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.hours-table td {
+  padding: .6rem .9rem;
+  border-bottom: 1px solid #e8ddd0;
+  color: #3d2e18;
+}
+
+.hours-table tbody tr:hover { background: #f0e8dc; }
+
+/* Ticket grid */
+.ticket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ticket-item {
+  background: #fff;
+  border: 1px solid #e8ddd0;
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.ticket-item--highlight {
+  background: var(--clr-stone);
+  border-color: var(--clr-amber);
+  grid-column: 1 / -1;
+}
+
+.ticket-type {
+  font-family: var(--ff-ui);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #7a6a55;
+}
+
+.ticket-item--highlight .ticket-type { color: var(--clr-gold); }
+
+.ticket-price {
+  font-family: var(--ff-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--clr-amber);
+  line-height: 1.1;
+}
+
+.ticket-note {
+  font-family: var(--ff-ui);
+  font-size: .72rem;
+  color: #9a8a78;
+}
+
+.ticket-item--highlight .ticket-note { color: rgba(245,237,224,.5); }
+
+.ticket-cta {
+  font-size: .95rem;
+  color: #5a4a38;
+  margin-bottom: 1.5rem;
+}
+
+/* Getting here list */
+.getting-here-list {
+  margin: .8rem 0 1rem 1.2rem;
+  list-style: disc;
+  color: #4a3c2e;
+}
+
+.getting-here-list li { margin-bottom: .5rem; font-size: 1rem; }
+
+/* ── Footer ── */
+.site-footer {
+  background: var(--clr-stone);
+  padding: 2.5rem 3rem;
+  text-align: center;
+  border-top: 1px solid rgba(232,168,48,.12);
+}
+
+.site-footer p {
+  font-family: var(--ff-ui);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  color: rgba(245,237,224,.5);
+  margin-bottom: .3rem;
+}
+
+.site-footer a { color: rgba(232,168,48,.7); }
+.site-footer a:hover { color: var(--clr-gold); }
+
+.footer-note {
+  font-size: .68rem !important;
+  color: rgba(245,237,224,.25) !important;
+  letter-spacing: .05em !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .about { grid-template-columns: 1fr; }
+  .about-label { border-top: none; padding-top: 0; margin-bottom: .5rem; }
+  .featured-item { grid-template-columns: 48px 1fr; gap: 1rem; }
+  .wildlife-section { grid-template-columns: 1fr; }
+  .wildlife-img-wrap { height: 240px; }
+  .visit-grid { grid-template-columns: 1fr; }
+  .ticket-grid { grid-template-columns: 1fr; }
+  .ticket-item--highlight { grid-column: auto; }
+  .navbar { padding: 0 1.5rem; }
+  .hero-text, .page-header-text { padding: 0 1.5rem; }
+  .about, .trails-section, .featured { padding: 4rem 1.5rem; }
+  .visit-card { padding: 2.5rem 1.5rem; }
+  .wildlife-text { padding: 2.5rem 1.5rem; }
+}
