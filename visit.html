@@ -3,165 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plan Your Visit &mdash; Yellowstone National Park</title>
+  <title>Plan Your Visit - Yellowstone National Park</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Crimson+Text:ital@0;1&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="nav-brand">YNP</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="explore.html">Explore</a></li>
-      <li><a href="visit.html" class="active">Plan Your Visit</a></li>
-    </ul>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="explore.html">Explore</a>
+    <a href="visit.html">Plan Your Visit</a>
   </nav>
 
-  <header class="page-header page-header--visit">
-    <div class="page-header-overlay"></div>
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Yellowstone_20090908_150408.jpg/1280px-Yellowstone_20090908_150408.jpg"
-      alt="Yellowstone entrance road"
-      class="page-header-img"
-    />
-    <div class="page-header-text">
-      <p class="hero-eyebrow">Everything You Need to Know</p>
-      <h1>Plan Your<br /><em>Visit</em></h1>
-    </div>
-  </header>
+  <h1>Plan Your Visit</h1>
 
-  <main>
+  <h2>Contact Information</h2>
+  <p>Address: 2 Officers Row, Yellowstone NP, WY 82190</p>
+  <p>Phone: (307) 344-7381</p>
+  <p>Email: yell_visitor_services@nps.gov</p>
 
-    <section class="visit-grid">
+  <h2>Hours of Operation</h2>
+  <p>The park is open 24 hours a day, 365 days a year. Visitor center hours vary by season.</p>
 
-      <!-- Contact Info -->
-      <div class="visit-card">
-        <div class="visit-card-icon">📍</div>
-        <h2>Contact &amp; Location</h2>
-        <div class="contact-block">
-          <p><strong>Main Address</strong><br />
-            Yellowstone National Park Headquarters<br />
-            2 Officers Row<br />
-            Yellowstone NP, WY 82190
-          </p>
-          <p><strong>Phone</strong><br />
-            (307) 344-7381
-          </p>
-          <p><strong>Email</strong><br />
-            <a href="mailto:yell_visitor_services@nps.gov">yell_visitor_services@nps.gov</a>
-          </p>
-          <p><strong>Emergency</strong><br />
-            (307) 344-2132
-          </p>
-        </div>
-      </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Visitor Center</th>
+        <th>Season</th>
+        <th>Hours</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Old Faithful Visitor Center</td>
+        <td>May - October</td>
+        <td>8:00am - 8:00pm</td>
+      </tr>
+      <tr>
+        <td>Old Faithful Visitor Center</td>
+        <td>November - April</td>
+        <td>9:00am - 5:00pm</td>
+      </tr>
+      <tr>
+        <td>Canyon Visitor Center</td>
+        <td>May - October</td>
+        <td>8:00am - 6:00pm</td>
+      </tr>
+      <tr>
+        <td>Mammoth Visitor Center</td>
+        <td>Year-round</td>
+        <td>9:00am - 5:00pm</td>
+      </tr>
+    </tbody>
+  </table>
 
-      <!-- Hours -->
-      <div class="visit-card">
-        <div class="visit-card-icon">🕐</div>
-        <h2>Hours of Operation</h2>
-        <p class="hours-note">The park is open 24 hours a day, 365 days a year. Visitor centers have varying seasonal hours.</p>
-        <table class="hours-table">
-          <thead>
-            <tr>
-              <th>Visitor Center</th>
-              <th>Season</th>
-              <th>Hours</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Old Faithful VC</td>
-              <td>May – Oct</td>
-              <td>8:00 am – 8:00 pm</td>
-            </tr>
-            <tr>
-              <td>Old Faithful VC</td>
-              <td>Nov – Apr</td>
-              <td>9:00 am – 5:00 pm</td>
-            </tr>
-            <tr>
-              <td>Canyon VC</td>
-              <td>May – Oct</td>
-              <td>8:00 am – 6:00 pm</td>
-            </tr>
-            <tr>
-              <td>Mammoth VC</td>
-              <td>Year-round</td>
-              <td>9:00 am – 5:00 pm</td>
-            </tr>
-            <tr>
-              <td>Grant Village VC</td>
-              <td>Jun – Sep</td>
-              <td>8:00 am – 7:00 pm</td>
-            </tr>
-            <tr>
-              <td>Fishing Bridge VC</td>
-              <td>May – Sep</td>
-              <td>8:00 am – 7:00 pm</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <h2>Tickets and Reservations</h2>
+  <p>You can purchase your entrance pass at any park entrance gate or visitor center. A private vehicle pass costs $35 and is valid for 7 days. No reservation is needed for day visits, but camping and lodging must be booked in advance at recreation.gov.</p>
 
-      <!-- Tickets -->
-      <div class="visit-card visit-card--tickets">
-        <div class="visit-card-icon">🎟️</div>
-        <h2>Entrance Fees &amp; Passes</h2>
-        <div class="ticket-grid">
-          <div class="ticket-item">
-            <span class="ticket-type">Private Vehicle</span>
-            <span class="ticket-price">$35</span>
-            <span class="ticket-note">Valid 7 days</span>
-          </div>
-          <div class="ticket-item">
-            <span class="ticket-type">Motorcycle</span>
-            <span class="ticket-price">$30</span>
-            <span class="ticket-note">Valid 7 days</span>
-          </div>
-          <div class="ticket-item">
-            <span class="ticket-type">Per Person</span>
-            <span class="ticket-price">$20</span>
-            <span class="ticket-note">Walk-in / bike</span>
-          </div>
-          <div class="ticket-item ticket-item--highlight">
-            <span class="ticket-type">America the Beautiful Pass</span>
-            <span class="ticket-price">$80</span>
-            <span class="ticket-note">All national parks, 1 year</span>
-          </div>
-        </div>
-        <p class="ticket-cta">
-          Purchase your pass at any entrance gate, at visitor centers, or in advance at
-          <strong>recreation.gov</strong>. No reservations are required for day use, but
-          camping and lodging require advance booking — especially in peak summer months.
-        </p>
-        <a href="visit.html" class="btn-primary">Reserve Camping</a>
-      </div>
-
-      <!-- Getting Here -->
-      <div class="visit-card">
-        <div class="visit-card-icon">🚗</div>
-        <h2>Getting Here</h2>
-        <p>Yellowstone has five entrance gates. The nearest major airports are:</p>
-        <ul class="getting-here-list">
-          <li><strong>Jackson Hole Airport (JAC)</strong> — 60 miles south via the South Entrance</li>
-          <li><strong>Bozeman Yellowstone International (BZN)</strong> — 90 miles north via the North Entrance</li>
-          <li><strong>Idaho Falls Regional (IDA)</strong> — 110 miles west via the West Entrance</li>
-        </ul>
-        <p>
-          There is no public transit into the park. A personal vehicle or guided tour is required.
-          Rental cars are available at all nearby airports.
-        </p>
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>Yellowstone National Park &mdash; <a href="index.html">Home</a> &mdash; <a href="explore.html">Explore</a></p>
-    <p class="footer-note">A fictional visitor site created for educational purposes.</p>
+  <footer>
+    <p>Yellowstone National Park Visitor Site</p>
   </footer>
 
 </body>
